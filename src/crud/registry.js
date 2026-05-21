@@ -113,9 +113,9 @@ export const REGISTRY = {
   invoices:         { schema: invoiceSchema,         redact: [],                roles: { read: ANY_AUTH, write: ADMIN } },
   payments:         { schema: paymentSchema,         redact: [],                roles: { read: ANY_AUTH, write: ADMIN } },
   announcements:    { schema: announcementSchema,    redact: [],                roles: { read: ANY_AUTH, write: TEACHERS } },
-  salaryStructures: { schema: salaryStructureSchema, redact: [],                roles: { read: ADMIN,    write: ADMIN } },
+  salaryStructures: { schema: salaryStructureSchema, redact: [],                roles: { read: TEACHERS, write: ADMIN } },
   payslips:         { schema: payslipSchema,         redact: [],                roles: { read: TEACHERS, write: ADMIN } },
-  salaryPayments:   { schema: salaryPaymentSchema,   redact: [],                roles: { read: ADMIN,    write: ADMIN } },
+  salaryPayments:   { schema: salaryPaymentSchema,   redact: [],                roles: { read: TEACHERS, write: ADMIN } },
 }
 
 export const TABLES = Object.keys(REGISTRY)
