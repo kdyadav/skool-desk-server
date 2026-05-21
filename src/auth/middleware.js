@@ -20,6 +20,7 @@ export function requireRole(...roles) {
     } catch {
       return reply.code(401).send({ error: 'unauthorized' })
     }
+    if (allowed.size === 0) return
     const role = request.user?.role
     if (role === 'owner') return
     if (!allowed.has(role)) {
